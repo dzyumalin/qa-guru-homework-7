@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
+import static tests.TestData.MAIN_DATA;
 import static utils.Files.readTextFromPath;
 import static utils.Zip.unzip;
 
@@ -18,7 +19,7 @@ public class ZipFileTests {
         String unzipFolderPath = "./src/test/resources/files/unzip";
         String zipPassword = "";
         String unzipTxtFilePath = "./src/test/resources/files/unzip/1.txt";
-        String expectedData = "chin up!";
+        String expectedData = MAIN_DATA;
 
         unzip(zipFilePath, unzipFolderPath, zipPassword);
         String actualData = readTextFromPath(unzipTxtFilePath);
@@ -30,7 +31,7 @@ public class ZipFileTests {
         String zipFilePath = "./src/test/resources/files/1.zip";
         String unzipFolderPath = "./src/test/resources/files/unzip";
         String unzipTxtFilePath = "./src/test/resources/files/unzip/1.txt";
-        String expectedData = "chin up!";
+        String expectedData = MAIN_DATA;
 
         unzip(zipFilePath, unzipFolderPath);
         String actualData = readTextFromPath(unzipTxtFilePath);
